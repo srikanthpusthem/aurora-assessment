@@ -43,6 +43,7 @@ Thumbs.db
 
 # Logs
 *.log
+logs/
 
 # FAISS indices (if saved to disk)
 *.index

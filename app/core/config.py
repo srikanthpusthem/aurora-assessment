@@ -24,6 +24,12 @@ class Settings(BaseSettings):
     # Server Configuration
     port: int = 8000
     
+    # Logging Configuration
+    log_level: str = "INFO"  # DEBUG, INFO, WARNING, ERROR
+    log_file: Optional[str] = "logs/aurora_qa.log"  # Path to log file (empty = console only)
+    log_max_bytes: int = 10 * 1024 * 1024  # 10MB per log file
+    log_backup_count: int = 5  # Keep 5 backup files
+    
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

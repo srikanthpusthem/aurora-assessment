@@ -8,6 +8,12 @@ class Message(BaseModel):
     
     id: str
     user_id: str
-    text: str
+    message: str  # API uses "message" not "text"
+    user_name: Optional[str] = None
     timestamp: Optional[datetime] = None
+    
+    @property
+    def text(self) -> str:
+        """Alias for message field for backward compatibility."""
+        return self.message
 
